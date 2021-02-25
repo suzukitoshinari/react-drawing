@@ -2,10 +2,26 @@ import React, { useRef, useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
-
+  
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [show, setShow] = useState(false);
+  
+  const Paper = () => {
+      if(show) {
+        return (
+          <div className='paper'>
+            <div>
+              <button>✖️</button>
+            </div>
+          </div>
+        )
+      } else {
+        return null;
+      }
+  }
+  // const [color, setColor] = useState('#f000000');
 
   useEffect(() => {
     const canvas = canvasRef.current;  
@@ -14,10 +30,10 @@ function App() {
     canvas.style.width = `${window.innerWidth}px`;
     canvas.style.height = `${window.innerHeight}px`;
 
-    const context = canvas.getContext("2d");
+    const context = canvas.getContext('2d');
     context.scale(2,2);
-    context.lineCap = "round";
-    context.strokeStyle = "black";
+    context.lineCap = 'round';
+    context.strokeStyle = 'black';
     context.lineWidth = 5
     contextRef.current = context;
   }, [])
@@ -45,20 +61,58 @@ function App() {
 
   const clearCanvas = () => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext("2d")
-    context.fillStyle = "white"
+    const context = canvas.getContext('2d')
+    context.fillStyle = 'white'
     context.fillRect(0, 0, canvas.width, canvas.height)
   }
 
+  const eraser = () => {
+    const canvas = canvasRef.current;  
+    const context = canvas.getContext('2d');
+    context.strokeStyle = 'white'
+  }
+
+  // const fill = () => {
+  //   const canvas = canvasRef.current;
+  //   const context = canvas.getContext('2d')
+  //   context.fillStyle = 'red'
+  //   context.fill();
+  //   context.stroke();
+  // }
+
+  const pen = () => {
+    const canvas = canvasRef.current;  
+    const context = canvas.getContext('2d');
+    context.strokeStyle = 'black'
+  }
+
+  // const setColor = () => {
+  //   setColor();
+  // }
+
   return (
     <>
-      <button onClick={clearCanvas}>白紙にする</button>
-      <canvas 
-        onMouseDown={startDrawing}
-        onMouseUp={finishDrawing}
-        onMouseMove={draw}
-        ref={canvasRef}
-      />
+      <header className='header'>
+        <h1>お絵かきアプリ</h1>
+      </header>
+      <div className='label'>
+        <button onClick={clearCanvas}>白紙にする</button>
+        <button onClick={pen}>ペン</button>
+        <button onClick={eraser}>消しゴム</button>
+        <div>
+          <button onClick={() => setShow(true)}>塗り潰し</button>
+          <Paper />
+        </div>
+      </div>
+      <div className='main_canvas'>
+        <canvas 
+          className='canvas'
+          onMouseDown={startDrawing}
+          onMouseUp={finishDrawing}
+          onMouseMove={draw}
+          ref={canvasRef}
+        />
+      </div>
     </>
   );
 }
