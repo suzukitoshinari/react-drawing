@@ -37,10 +37,11 @@ button {
     cursor: pointer;
     display: flex;
     align-items: center;
+    outline: none;
 }
 
-label:hover {
-    background-color: rgb(245, 239, 239);
+button:hover {
+    background-color: rgb(230, 225, 225);
 }
 
 .canvas {

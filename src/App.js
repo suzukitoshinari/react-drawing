@@ -12,9 +12,7 @@ function App() {
       if(show) {
         return (
           <div className='paper'>
-            <div>
               <button>✖️</button>
-            </div>
           </div>
         )
       } else {
