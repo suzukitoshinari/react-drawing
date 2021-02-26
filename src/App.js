@@ -7,18 +7,6 @@ function App() {
   const contextRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [show, setShow] = useState(false);
-  
-  const Paper = () => {
-      if(show) {
-        return (
-          <div className='paper'>
-              <button>✖️</button>
-          </div>
-        )
-      } else {
-        return null;
-      }
-  }
   // const [color, setColor] = useState('#f000000');
 
   useEffect(() => {
@@ -70,13 +58,26 @@ function App() {
     context.strokeStyle = 'white'
   }
 
-  // const fill = () => {
-  //   const canvas = canvasRef.current;
-  //   const context = canvas.getContext('2d')
-  //   context.fillStyle = 'red'
-  //   context.fill();
-  //   context.stroke();
-  // }
+  const fill = () => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d')
+    context.fillStyle = 'red'
+    context.fill();
+    context.stroke();
+  }
+
+  const Paper = () => {
+    if(show) {
+      return (
+        <div className='paper'>
+            <button className='close'>✖️</button>
+            <button className='red' onClick={fill}></button>
+        </div>
+      )
+    } else {
+      return null;
+    }
+}
 
   const pen = () => {
     const canvas = canvasRef.current;  
@@ -94,11 +95,11 @@ function App() {
         <h1>お絵かきアプリ</h1>
       </header>
       <div className='label'>
-        <button onClick={clearCanvas}>白紙にする</button>
-        <button onClick={pen}>ペン</button>
-        <button onClick={eraser}>消しゴム</button>
-        <div>
-          <button onClick={() => setShow(true)}>塗り潰し</button>
+        <button className='btn' onClick={clearCanvas}>白紙にする</button>
+        <button className='btn' onClick={pen}>ペン</button>
+        <button className='btn' onClick={eraser}>消しゴム</button>
+        <div className='fill'>
+          <button className='btn_fill' onClick={() => setShow(true)}>塗り潰し</button>
           <Paper />
         </div>
       </div>
