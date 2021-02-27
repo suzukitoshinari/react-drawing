@@ -70,8 +70,8 @@ function App() {
     if(show) {
       return (
         <div className='paper'>
-            <button className='close'>✖️</button>
-            <button className='red' onClick={fill}></button>
+            <button className='close' onClick={() => setShow(false)}>✖️</button>
+            <button className='color' onClick={fill}></button>
         </div>
       )
     } else {
@@ -98,10 +98,8 @@ function App() {
         <button className='btn' onClick={clearCanvas}>白紙にする</button>
         <button className='btn' onClick={pen}>ペン</button>
         <button className='btn' onClick={eraser}>消しゴム</button>
-        <div className='fill'>
           <button className='btn_fill' onClick={() => setShow(true)}>塗り潰し</button>
           <Paper />
-        </div>
       </div>
       <div className='main_canvas'>
         <canvas 

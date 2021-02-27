@@ -7,20 +7,30 @@
 
 .paper {
     width: 100px;
-    height: 50px;
-    background-color: #eee;
+    height: 38px;
+    background-color: #fff;
     border: 1px solid black;
     z-index: 99;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin-left: 10px;
 }
 
 .close {
     cursor: pointer;
+    outline: none;
+    border-radius: 6px;
 }
 
-.red {
-    width: 30px;
-    height: 30px;
+.color {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
     background-color: tomato;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
 }
 
 .header {
@@ -52,7 +62,6 @@
 
 .fill {
     display: flex;
-    
 }
 
 .btn_fill {
@@ -60,9 +69,14 @@
     border: 1px solid black;
     border-radius: 8px;
     background-color: rgb(231, 228, 228);
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    outline: none;
 }
 
-.btn:hover {
+.btn .btn_fill:hover {
     background-color: rgb(253, 249, 249);
 }
 
