@@ -6,7 +6,7 @@
 }
 
 .paper {
-    width: 100px;
+    width: 150px;
     height: 38px;
     background-color: #fff;
     border: 1px solid black;
@@ -23,11 +23,31 @@
     border-radius: 6px;
 }
 
-.color {
+.color1 {
     margin-left: 10px;
     width: 25px;
     height: 25px;
     background-color: tomato;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.color2 {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(94, 226, 94);
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.color3 {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: blue;
     border-radius: 6px;
     cursor: pointer;
     outline: none;
