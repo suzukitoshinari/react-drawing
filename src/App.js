@@ -1,3 +1,4 @@
+import { yellow } from '@material-ui/core/colors';
 import React, { useRef, useEffect, useState } from 'react';
 import './App.css';
 
@@ -82,6 +83,14 @@ function App() {
     context.stroke();
   }
 
+  const yellow = () => {
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d')
+    context.fillStyle = 'yellow'
+    context.fill();
+    context.stroke();
+  }
+
   const Fill = () => {
     if(showFill) {
       return (
@@ -90,6 +99,7 @@ function App() {
             <button className='color1' onClick={red}></button>
             <button className='color2' onClick={green}></button>
             <button className='color3' onClick={blue}></button>
+            <button className='color4' onClick={yellow}></button>
         </div>
       )
     } else {
@@ -105,6 +115,7 @@ function App() {
             <button className='color1' onClick={pen1}></button>
             <button className='color2' onClick={pen2}></button>
             <button className='color3' onClick={pen3}></button>
+            <button className='color4' onClick={pen4}></button>
         </div>
       )
     } else {
@@ -128,6 +139,12 @@ function App() {
     const canvas = canvasRef.current;  
     const context = canvas.getContext('2d');
     context.strokeStyle = 'blue'
+  }
+
+  const pen4 = () => {
+    const canvas = canvasRef.current;  
+    const context = canvas.getContext('2d');
+    context.strokeStyle = 'yellow'
   }
 
 

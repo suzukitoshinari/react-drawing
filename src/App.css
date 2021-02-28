@@ -6,7 +6,7 @@
 }
 
 .paper {
-    width: 150px;
+    width: 180px;
     height: 38px;
     background-color: #fff;
     border: 1px solid black;
@@ -48,6 +48,16 @@
     width: 25px;
     height: 25px;
     background-color: blue;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+.color4 {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: yellow;
     border-radius: 6px;
     cursor: pointer;
     outline: none;
