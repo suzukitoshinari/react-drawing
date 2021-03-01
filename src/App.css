@@ -6,7 +6,7 @@
 }
 
 .paper {
-    width: 180px;
+    width: 200px;
     height: 38px;
     background-color: #fff;
     border: 1px solid black;
@@ -14,13 +14,23 @@
     display: flex;
     align-items: center;
     border-radius: 6px;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .close {
     cursor: pointer;
     outline: none;
     border-radius: 6px;
+}
+
+.color0 {
+    margin-left: 10px;
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
 }
 
 .color1 {
@@ -104,6 +114,7 @@
     display: flex;
     align-items: center;
     outline: none;
+    margin-right: 10px;
 }
 
 .btn .btn_fill:hover {
