@@ -90,6 +90,14 @@ function Canvas() {
             context.fill();
             context.stroke();
         }
+
+        const white = () => {
+            const canvas = canvasRef.current;
+            const context = canvas.getContext('2d')
+            context.fillStyle = 'rgb(247, 223, 199)'
+            context.fill();
+            context.stroke();
+        }
     
         const Fill = () => {
             if(showFill) {
@@ -100,6 +108,7 @@ function Canvas() {
                     <button className='color2' onClick={green}></button>
                     <button className='color3' onClick={blue}></button>
                     <button className='color4' onClick={yellow}></button>
+                    <button className='color5' onClick={white}></button>
                     </div>
                 )
             } else {
